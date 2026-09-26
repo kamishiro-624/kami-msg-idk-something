@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title Here</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page-wrapper">    
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>Main Chat</h1>
+            <button class="refresh-msg" type="button">Refresh Messages</button>
+        </div>
+        <div class="chat-messages" id="chatMessages" aria-live="polite"></div>
+        <form class="username-form" id="usernameForm">
+            <label for="usernameInput">Create a username to join</label>
+            <div class="form-row">
+                <input type="text" id="usernameInput" placeholder="Username" required autocomplete="username" maxlength="24">
+                <button type="submit">Join chat</button>
+            </div>
+            <div class="form-status" id="usernameStatus" role="status" aria-live="polite"></div>
+        </form>
+        <div class="signed-in" id="signedInStatus" hidden></div>
+        <form class="chat-input-area" id="chatForm" aria-label="Send a message">
+            <div class="reply-preview" id="replyPreview" hidden>
+                <span id="replyPreviewText"></span>
+                <button type="button" id="cancelReplyButton">Cancel reply</button>
+            </div>
+            <details class="formatting-menu">
+                <summary aria-label="Markdown formatting" title="Markdown formatting">Aa</summary>
+                <div class="formatting-options" role="toolbar" aria-label="Markdown formatting options">
+                    <button type="button" data-format="bold" aria-label="Bold" title="Bold">B</button>
+                    <button type="button" data-format="italic" aria-label="Italic" title="Italic"><em>I</em></button>
+                    <button type="button" data-format="underline" aria-label="Underline" title="Underline"><u>U</u></button>
+                    <button type="button" data-format="strike" aria-label="Strikethrough" title="Strikethrough"><s>S</s></button>
+                    <button type="button" data-format="spoiler" aria-label="Spoiler" title="Spoiler">Spoiler</button>
+                    <button type="button" data-format="inline-code" aria-label="Inline code" title="Inline code">&lt;/&gt;</button>
+                    <button type="button" data-format="code-block" aria-label="Code block" title="Code block">Code block</button>
+                    <button type="button" data-format="quote" aria-label="Quote" title="Quote">Quote</button>
+                    <button type="button" data-format="link" aria-label="Link" title="Link">Link</button>
+                </div>
+            </details>
+            <textarea id="msgInput" placeholder="Choose a username before messaging" required autocomplete="off" rows="1" disabled></textarea>
+            <button type="submit" disabled>Send</button>
+        </form>
+    </div>
+
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it@14.1.0/dist/markdown-it.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.4.16/dist/purify.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
