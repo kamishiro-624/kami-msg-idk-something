@@ -277,7 +277,8 @@ button.message-reply-quote {
 .formatting-menu {
     position: relative;
     flex: none;
-    align-self: flex-end;
+    margin-left: auto;
+    padding-right: 10px;
 }
 
 .formatting-menu summary {
@@ -291,6 +292,7 @@ button.message-reply-quote {
     font-weight: bold;
     cursor: pointer;
     list-style: none;
+    margin-left: auto;
 }
 
 .formatting-menu summary::-webkit-details-marker {
@@ -305,7 +307,7 @@ button.message-reply-quote {
 .formatting-options {
     position: absolute;
     z-index: 5;
-    right: 0;
+    left: calc(100% + 8px);
     bottom: calc(100% + 8px);
     display: grid;
     grid-template-columns: repeat(4, minmax(38px, auto));
